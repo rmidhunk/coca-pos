@@ -1,6 +1,8 @@
 import BrandsPage from "@/components/brands-page";
+import ExcellencePage from "@/components/excellence-page";
 import FaqPage from "@/components/faq-page";
 import FeaturesPage from "@/components/features-page";
+import FooterPage from "@/components/footer-page";
 import Header from "@/components/header";
 import HomePage from "@/components/home-page";
 import PricingPage from "@/components/pricing-page";
@@ -17,8 +19,8 @@ const index = () => {
       <PricingPage />
       <TestimonialsPage />
       <FaqPage />
-      {/* index */}
-      {/* footer */}
+      <ExcellencePage />
+      <FooterPage />
     </div>
   );
 };

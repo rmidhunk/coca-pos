@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <div className="flex items-center justify-between py-4">
       <h1 className="shrink-0">
-        <img src="/coca-logo.svg" alt="Coca Logo" />
+        <img src="/coca-black-logo.svg" alt="Coca Logo" />
       </h1>
 
       <nav>
