@@ -3,6 +3,7 @@ import Header from "@/components/header";
 import BrandsPage from "@/components/brands-page";
 import FeaturesPage from "@/components/features-page";
 import PricingPage from "@/components/pricing-page";
+import TestimonialsPage from "@/components/testimonials-page";
 
 const index = () => {
   return (
@@ -11,8 +12,9 @@ const index = () => {
       <HomePage />
       <BrandsPage />
       <FeaturesPage />
+      {/* TODO: PricingPage */}
       <PricingPage />
-      {/* Testimonials */}
+      <TestimonialsPage />
       {/* FAQs */}
       {/* index */}
       {/* footer */}
