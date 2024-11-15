@@ -16,6 +16,7 @@ export default {
         "background-black": "#19191C",
         "primary-orange": "#FF5C00",
         "grey-text": "#4D4E57",
+        "border-1": "#E4E4E4",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
