@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 import { useState } from "react";
 
 const FaqPage = () => {
-  const [showAccordian, setShowAccordian] = useState(1);
+  const [showAccordian, setShowAccordian] = useState(0);
 
   const faqs = [
     {

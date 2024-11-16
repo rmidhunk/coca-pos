@@ -1,4 +1,5 @@
 import { Button } from "../ui/button";
+import { BarChartComponent } from "./landing-page-components/bar-chart";
 
 const LandingPage = () => {
   return (
@@ -22,7 +23,7 @@ const LandingPage = () => {
       </div>
       <div className="grid grid-cols-1 gap-4">
         <div>
-          <img src="/sales-statistics.png" alt="Sales Statistics" />
+          <BarChartComponent />
         </div>
         <div className="flex gap-4">
           <div>
