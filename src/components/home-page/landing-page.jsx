@@ -1,5 +1,5 @@
 import { Button } from "../ui/button";
-import { BarChartComponent } from "./landing-page-components/bar-chart";
+import RightSectionGrid from "./landing-page-components/right-section-grid";
 
 const LandingPage = () => {
   return (
@@ -21,22 +21,7 @@ const LandingPage = () => {
           </Button>
         </div>
       </div>
-      <div className="grid grid-cols-1 gap-4">
-        <div>
-          <BarChartComponent />
-        </div>
-        <div className="flex gap-4">
-          <div>
-            <img src="/rating-review.png" alt="Rating review" />
-          </div>
-          <div>
-            <img src="/total-partner.png" alt="Total Partner" />
-          </div>
-        </div>
-        <div>
-          <img src="/landing-testimonial.png" alt="Landing Testimonial" />
-        </div>
-      </div>
+      <RightSectionGrid />
     </section>
   );
 };

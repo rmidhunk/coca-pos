@@ -42,8 +42,6 @@ export function BarChartComponent() {
   return (
     <Card className="bg-background-blue shadow-none">
       <CardHeader>
-        {/* <CardTitle>Bar Chart</CardTitle>
-        <CardDescription>January - June 2024</CardDescription> */}
         <div className="flex items-center gap-2 py-2 px-3 w-max bg-white rounded-full">
           <div className="size-6">
             <img src="/sales-graph-icon.svg" alt="Sales Graph" />
