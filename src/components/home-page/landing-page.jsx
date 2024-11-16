@@ -1,6 +1,6 @@
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 
-const HomePage = () => {
+const LandingPage = () => {
   return (
     <section className="flex flex-col gap-5 py-4">
       <div className="bg-[#131315] rounded-[32px]">
@@ -40,4 +40,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default LandingPage;
