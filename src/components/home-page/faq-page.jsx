@@ -36,8 +36,8 @@ const FaqPage = () => {
     }
   };
   return (
-    <section className="py-4">
-      <div className="py-6 px-2 bg-background-blue rounded-[32px]">
+    <section className="py-4 sm:py-10">
+      <div className="py-6 px-2 bg-background-blue rounded-[32px] sm:px-14 sm:py-16">
         <div>
           <h4 className="text-3xl font-medium mb-10">
             Frequently Asked Questions

@@ -9,7 +9,7 @@ const FooterPage = () => {
 
   return (
     <section className="pb-4">
-      <div className="bg-[#1B1B1E] p-4 rounded-b-[32px]">
+      <div className="bg-[#1B1B1E] p-4 rounded-b-[32px] sm:px-14 sm:py-10">
         <div className="border-b border-[#2D2D30] pb-4">
           <h4 className="text-3xl text-white font-medium mb-6">
             Gain Excellence with the Best POS Solutions

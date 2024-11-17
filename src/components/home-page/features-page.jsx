@@ -27,7 +27,7 @@ const FeaturesPage = () => {
   }, []);
 
   return (
-    <section className="py-4">
+    <section className="py-4 sm:py-16">
       <h4 className="text-3xl font-medium mb-10">
         Complementary features for your business needs
       </h4>

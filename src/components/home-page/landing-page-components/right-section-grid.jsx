@@ -7,7 +7,7 @@ const RightSectionGrid = () => {
         <BarChartComponent />
       </div>
       <div className="flex flex-col gap-4">
-        <div className="bg-[#F2ECFF] rounded-[32px] p-4 flex flex-col justify-between h-64">
+        <div className="bg-[#F2ECFF] rounded-[32px] p-4 flex flex-col justify-between h-64 sm:p-5">
           <div>
             <div className="flex items-center gap-2 py-2 px-3 w-max bg-white rounded-full mb-2">
               <div className="size-6">
@@ -28,7 +28,7 @@ const RightSectionGrid = () => {
             <span className="font-semibold text-4xl">4.9</span>
           </div>
         </div>
-        <div className="bg-[#6D6D6F] rounded-[32px] p-4 flex flex-col justify-between h-64">
+        <div className="bg-[#6D6D6F] rounded-[32px] p-4 flex flex-col justify-between h-64 sm:p-5">
           <div>
             <div className="flex items-center gap-2 py-2 px-3 w-max bg-[#222222] rounded-full">
               <div className="size-6">
@@ -45,8 +45,8 @@ const RightSectionGrid = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-6 rounded-[20px] p-8 bg-[#FFF5EE]">
-        <p className="font-medium text-[#DC8558]">
+      <div className="flex flex-col gap-6 rounded-[20px] p-8 bg-[#FFF5EE] sm:px-5 sm:py-6">
+        <p className="font-medium text-[#DC8558] sm:mb-8">
           “Deliver a better customer experience and increase their operational
           efficiency.”
         </p>

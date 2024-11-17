@@ -61,7 +61,7 @@ const TestimonialsPage = () => {
   }, []);
 
   return (
-    <section className="py-4">
+    <section className="py-4 sm:py-20">
       <div className="flex flex-col gap-10">
         <div>
           <h4 className="text-3xl font-medium mb-10">Ease in the Hand</h4>

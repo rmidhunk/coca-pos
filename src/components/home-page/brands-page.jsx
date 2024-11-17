@@ -1,6 +1,6 @@
 const BrandsPage = () => {
   return (
-    <section className="py-4">
+    <section className="py-4 sm:py-7">
       <div>
         <h3 className="text-sm font-medium text-center">
           Trusted by over 50 thousand restaurants in 10+ countries
