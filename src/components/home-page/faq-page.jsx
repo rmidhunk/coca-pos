@@ -42,32 +42,36 @@ const FaqPage = () => {
           <h4 className="text-3xl font-medium mb-10">
             Frequently Asked Questions
           </h4>
-          <div className="inline-flex p-2 bg-white border border-border-1 rounded-full mb-2">
-            <input
-              type="text"
-              placeholder="Type your question here"
-              className="w-full text-sm p-1 outline-none bg-transparent"
-            />
-            <Button>Search</Button>
+          <div className="flex justify-center">
+            <div className="inline-flex p-2 bg-white border border-border-1 rounded-full mb-2">
+              <input
+                type="text"
+                placeholder="Type your question here"
+                className="w-full text-sm p-1 outline-none bg-transparent"
+              />
+              <Button>Search</Button>
+            </div>
           </div>
         </div>
         <div className="flex flex-col gap-4">
-          <div className="inline-block bg-background-blue rounded-full p-1">
-            <Button
-              variant="outline"
-              className="border-primary-orange text-primary-orange hover:text-primary-orange"
-            >
-              General
-            </Button>
-            <Button variant="ghost" className="text-grey-text">
-              Transactions
-            </Button>
-            <Button variant="ghost" className="text-grey-text">
-              Payment
-            </Button>
-            <Button variant="ghost" className="text-grey-text">
-              Others
-            </Button>
+          <div className="flex justify-center">
+            <div className="inline-block bg-background-blue rounded-full p-1">
+              <Button
+                variant="outline"
+                className="border-primary-orange text-primary-orange hover:text-primary-orange"
+              >
+                General
+              </Button>
+              <Button variant="ghost" className="text-grey-text">
+                Transactions
+              </Button>
+              <Button variant="ghost" className="text-grey-text">
+                Payment
+              </Button>
+              <Button variant="ghost" className="text-grey-text">
+                Others
+              </Button>
+            </div>
           </div>
           <ul className="flex flex-col">
             {faqs.length === 0 ? (
@@ -81,7 +85,7 @@ const FaqPage = () => {
                   className="border-b border-border-1 pb-4 mb-4 last:border-none last:pb-0 last:mb-0"
                   onClick={() => handleAccordian(idx)}
                 >
-                  <div className="flex items-center gap-2 mb-2">
+                  <div className="flex items-center justify-between gap-2 mb-2">
                     <p
                       className={cn(
                         "font-medium text-base",

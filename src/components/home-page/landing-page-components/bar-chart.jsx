@@ -40,7 +40,7 @@ export function BarChartComponent() {
   }, []);
 
   return (
-    <Card className="bg-background-blue shadow-none">
+    <Card className="bg-background-blue rounded-[32px] shadow-none">
       <CardHeader>
         <div className="flex items-center gap-2 py-2 px-3 w-max bg-white rounded-full">
           <div className="size-6">

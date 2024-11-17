@@ -1,14 +1,6 @@
 import { db } from "@/firebase";
-import {
-  collection,
-  doc,
-  getDocs,
-  orderBy,
-  query,
-  setDoc,
-} from "firebase/firestore";
-import { useState } from "react";
-import { useEffect } from "react";
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
+import { useEffect, useState } from "react";
 
 const TestimonialsPage = () => {
   const [testimonials, setTestimonials] = useState([]);
@@ -78,7 +70,7 @@ const TestimonialsPage = () => {
             has many advantages. Here are some of them:
           </p>
 
-          <div className="grid grid-cols-1 gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
             {appAdvantages?.map((advantage) => (
               <div key={advantage?.title}>
                 <span className="inline-block w-16 mb-3">
@@ -93,34 +85,40 @@ const TestimonialsPage = () => {
           </div>
         </div>
         <div className="flex flex-col gap-8">
-          {testimonials?.map((testimonial) => (
-            <div
-              key={testimonial.id}
-              className="flex flex-col gap-6 rounded-[20px] p-8"
-              style={{
-                backgroundColor: testimonial?.backgroundColor,
-                color: testimonial?.fontColor,
-              }}
-            >
-              <p className="font-medium">{testimonial?.quote}</p>
-              <div className="flex items-center gap-3">
-                <span
-                  className="inline-block size-14 rounded-full shrink-0"
-                  style={{
-                    backgroundColor: testimonial?.avatarColor,
-                  }}
-                />
-                <div>
-                  <p className="font-semibold text-base">
-                    {testimonial?.person}
-                  </p>
-                  <span className="font-semibold text-sm">
-                    {testimonial?.designation}
-                  </span>
+          {testimonials?.length === 0 ? (
+            <span className="flex justify-center items-center">
+              Loading testimonials...
+            </span>
+          ) : (
+            testimonials?.map((testimonial) => (
+              <div
+                key={testimonial.id}
+                className="flex flex-col gap-6 rounded-[20px] p-8"
+                style={{
+                  backgroundColor: testimonial?.backgroundColor,
+                  color: testimonial?.fontColor,
+                }}
+              >
+                <p className="font-medium">{testimonial?.quote}</p>
+                <div className="flex items-center gap-3">
+                  <span
+                    className="inline-block size-14 rounded-full shrink-0"
+                    style={{
+                      backgroundColor: testimonial?.avatarColor,
+                    }}
+                  />
+                  <div>
+                    <p className="font-semibold text-base">
+                      {testimonial?.person}
+                    </p>
+                    <span className="font-semibold text-sm">
+                      {testimonial?.designation}
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))
+          )}
         </div>
       </div>
     </section>

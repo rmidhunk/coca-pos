@@ -3,18 +3,36 @@ import LandingPage from "../pages/home-page";
 import SignIn from "@/pages/signin-page";
 
 const AppRouter = () => {
-  const router = createBrowserRouter([
+  const router = createBrowserRouter(
+    [
+      {
+        path: "/*",
+        children: [{ path: "*", element: <LandingPage /> }],
+      },
+      {
+        path: "/signin/*",
+        children: [{ path: "*", element: <SignIn /> }],
+      },
+    ],
     {
-      path: "/",
-      element: <LandingPage />,
+      future: {
+        v7_relativeSplatPath: true,
+        v7_fetcherPersist: true,
+        v7_normalizeFormMethod: true,
+        v7_partialHydration: true,
+        v7_skipActionErrorRevalidation: true,
+      },
     },
-    {
-      path: "/signin",
-      element: <SignIn />,
-    },
-  ]);
+  );
 
-  return <RouterProvider router={router} />;
+  return (
+    <RouterProvider
+      router={router}
+      future={{
+        v7_startTransition: true,
+      }}
+    />
+  );
 };
 
 export { AppRouter };

@@ -50,7 +50,7 @@ const RightSectionGrid = () => {
           “Deliver a better customer experience and increase their operational
           efficiency.”
         </p>
-        <div>
+        <div className="sm:flex sm:justify-between sm:items-center">
           <div className="flex items-center gap-3 bg-white rounded-full p-2">
             <span className="inline-block size-10 rounded-full shrink-0 bg-[#F2D0B8]" />
             <div>
@@ -64,7 +64,7 @@ const RightSectionGrid = () => {
               </div>
             </div>
           </div>
-          <div className="flex justify-center items-center gap-2 mt-4">
+          <div className="flex justify-center items-center gap-2 mt-4 sm:mt-0">
             <span>
               <img src="/left-arrow.svg" alt="Left" />
             </span>

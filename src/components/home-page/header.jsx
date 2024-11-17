@@ -1,10 +1,12 @@
-import { useState } from "react";
-import { Button } from "../ui/button";
-import { cn } from "@/lib/utils";
-import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
 import { StateContext } from "@/context";
+import { auth } from "@/firebase";
+import { cn } from "@/lib/utils";
+import { signOut } from "firebase/auth";
+import { LogOut } from "lucide-react";
+import { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import { Button } from "../ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,10 +14,10 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
-import { LogOut } from "lucide-react";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isUserLoading, setIsUserLoading] = useState(true);
   const navigate = useNavigate();
   const { user } = useContext(StateContext);
 
@@ -34,6 +36,14 @@ const Header = () => {
     { name: "Resource", variant: "ghost" },
   ];
 
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(() => {
+      setIsUserLoading(false);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   const getInitials = (displayName) => {
     if (!displayName) return "";
     const nameParts = displayName.trim().split(" ");
@@ -48,6 +58,18 @@ const Header = () => {
     const lastInitial = nameParts[nameParts.length - 1].charAt(0);
 
     return `${firstInitial}${lastInitial}`.toUpperCase();
+  };
+
+  const handleSignOut = () => {
+    signOut(auth)
+      .then(() => {
+        alert("You have successfully signed out");
+        navigate("/");
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        alert(errorMessage);
+      });
   };
 
   const UserDisplay = () => {
@@ -80,7 +102,7 @@ const Header = () => {
 
           <DropdownMenuItem
             className="flex items-center gap-2 text-red-600 focus:text-red-600 cursor-pointer"
-            // onClick={onSignOut}
+            onClick={handleSignOut}
           >
             <LogOut className="w-4 h-4" />
             <span>Sign out</span>
@@ -97,7 +119,7 @@ const Header = () => {
       </h1>
 
       <nav>
-        <ul className="hidden md:flex space-x-4 bg-background-blue rounded-full p-1">
+        <ul className="hidden lg:flex space-x-4 bg-background-blue rounded-full p-1">
           {navItems.map((item) => (
             <li key={item?.name}>
               <Button
@@ -112,7 +134,7 @@ const Header = () => {
 
         <ul
           className={cn(
-            `md:hidden absolute top-16 left-0 right-0 bg-background-blue rounded-lg p-4 space-y-4`,
+            `lg:hidden absolute top-16 left-0 right-0 bg-background-blue rounded-lg p-4 space-y-4`,
             isMobileMenuOpen ? "block" : "hidden",
           )}
         >
@@ -131,7 +153,9 @@ const Header = () => {
       </nav>
       <div className="flex items-center">
         <div className="justify-end">
-          {user?.displayName ? (
+          {isUserLoading ? (
+            <div className="h-8 w-8 rounded-full bg-gray-200 animate-pulse" />
+          ) : user?.displayName ? (
             <UserDisplay />
           ) : (
             <Button
@@ -143,7 +167,7 @@ const Header = () => {
             </Button>
           )}
         </div>
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <button onClick={toggleMobileMenu} className="p-2">
             <span
               className={cn(

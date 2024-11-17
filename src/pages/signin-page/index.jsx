@@ -35,7 +35,7 @@ const SignInPage = () => {
       })
       .catch((error) => {
         const errorMessage = error.message;
-        console.log(errorMessage);
+        alert(errorMessage);
       });
   };
 
@@ -47,9 +47,7 @@ const SignInPage = () => {
           {user ? (
             <>
               <div className="bg-blue-600 px-6 py-4 rounded">
-                <h2 className="text-2xl font-semibold text-white">
-                  Welcome back!
-                </h2>
+                <h2 className="text-2xl font-semibold text-white">Welcome</h2>
               </div>
               <div>
                 <h3 className="text-xl font-medium text-gray-900">
