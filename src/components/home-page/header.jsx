@@ -1,4 +1,4 @@
-import { StateContext } from "@/context";
+import { DispatchContext, StateContext } from "@/context";
 import { auth } from "@/firebase";
 import { cn } from "@/lib/utils";
 import { signOut } from "firebase/auth";
@@ -18,7 +18,9 @@ import {
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isUserLoading, setIsUserLoading] = useState(true);
+
   const navigate = useNavigate();
+  const dispatch = useContext(DispatchContext);
   const { user } = useContext(StateContext);
 
   const toggleMobileMenu = () => setIsMobileMenuOpen((prev) => !prev);
@@ -63,6 +65,7 @@ const Header = () => {
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
+        dispatch({ type: "UpdateUser", payload: null });
         alert("You have successfully signed out");
         navigate("/");
       })
