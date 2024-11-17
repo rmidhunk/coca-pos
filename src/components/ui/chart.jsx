@@ -1,5 +1,6 @@
 import * as React from "react";
 import * as RechartsPrimitive from "recharts";
+import PropTypes from "prop-types";
 
 import { cn } from "@/lib/utils";
 
@@ -48,8 +49,16 @@ const ChartContainer = React.forwardRef(
 );
 ChartContainer.displayName = "Chart";
 
+ChartContainer.propTypes = {
+  id: PropTypes.string,
+  className: PropTypes.string,
+  children: PropTypes.object,
+  config: PropTypes.object,
+};
+
 const ChartStyle = ({ id, config }) => {
   const colorConfig = Object.entries(config).filter(
+    // eslint-disable-next-line no-unused-vars
     ([_, config]) => config.theme || config.color,
   );
 
@@ -80,6 +89,11 @@ ${colorConfig
 };
 
 const ChartTooltip = RechartsPrimitive.Tooltip;
+
+ChartStyle.propTypes = {
+  id: PropTypes.string,
+  config: PropTypes.object,
+};
 
 const ChartTooltipContent = React.forwardRef(
   (
@@ -223,6 +237,22 @@ const ChartTooltipContent = React.forwardRef(
 );
 ChartTooltipContent.displayName = "ChartTooltip";
 
+ChartTooltipContent.propTypes = {
+  active: PropTypes.bool,
+  payload: PropTypes.array,
+  className: PropTypes.string,
+  indicator: PropTypes.string,
+  hideLabel: PropTypes.bool,
+  hideIndicator: PropTypes.bool,
+  label: PropTypes.string,
+  labelFormatter: PropTypes.string,
+  labelClassName: PropTypes.string,
+  formatter: PropTypes.string,
+  color: PropTypes.string,
+  nameKey: PropTypes.string,
+  labelKey: PropTypes.string,
+};
+
 const ChartLegend = RechartsPrimitive.Legend;
 
 const ChartLegendContent = React.forwardRef(
@@ -275,6 +305,14 @@ const ChartLegendContent = React.forwardRef(
   },
 );
 ChartLegendContent.displayName = "ChartLegend";
+
+ChartLegendContent.propTypes = {
+  payload: PropTypes.array,
+  className: PropTypes.string,
+  hideIcon: PropTypes.bool,
+  verticalAlign: PropTypes.bool,
+  nameKey: PropTypes.string,
+};
 
 // Helper to extract item config from a payload.
 function getPayloadConfigFromPayload(config, payload, key) {

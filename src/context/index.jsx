@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { createContext, useReducer } from "react";
 
 const StateContext = createContext();
@@ -25,5 +26,9 @@ function ContextProvider({ children }) {
     </DispatchContext.Provider>
   );
 }
+
+ContextProvider.propTypes = {
+  children: PropTypes.object,
+};
 
 export { ContextProvider, DispatchContext, StateContext };
