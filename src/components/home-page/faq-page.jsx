@@ -1,44 +1,32 @@
+import { db } from "@/firebase";
 import { cn } from "@/lib/utils";
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
+import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
-import { useState } from "react";
 
 const FaqPage = () => {
   const [showAccordian, setShowAccordian] = useState(0);
+  const [faqs, setFaqs] = useState([]);
 
-  const faqs = [
-    {
-      id: 0,
-      question: "What are the common features in the Coca POS system?",
-      answer:
-        "Common features in a POS system include order management, payment integration, stock management, sales reporting, data analysis, table management (in restaurants), and customer support.",
-    },
-    {
-      id: 1,
-      question: "How does Coca POS help in managing stock?",
-      answer:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis, nobis nemo molestiae mollitia corporis doloremque possimus ipsum, magnam totam tenetur debitis excepturi odit aliquam enim modi quidem nisi commodi illum!",
-    },
-    {
-      id: 2,
-      question:
-        "Can the Coca POS application be integrated with other systems?",
-      answer:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis, nobis nemo molestiae mollitia corporis doloremque possimus ipsum, magnam totam tenetur debitis excepturi odit aliquam enim modi quidem nisi commodi illum!",
-    },
-    {
-      id: 3,
-      question:
-        "What is the average cost to purchase and implement a Coca POS?",
-      answer:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis, nobis nemo molestiae mollitia corporis doloremque possimus ipsum, magnam totam tenetur debitis excepturi odit aliquam enim modi quidem nisi commodi illum!",
-    },
-    {
-      id: 4,
-      question: "What about customer data security?",
-      answer:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis, nobis nemo molestiae mollitia corporis doloremque possimus ipsum, magnam totam tenetur debitis excepturi odit aliquam enim modi quidem nisi commodi illum!",
-    },
-  ];
+  const getFaqs = async () => {
+    const querySnapshot = await getDocs(
+      query(collection(db, "faqs"), orderBy("idx", "asc")),
+    );
+    const newFaqs = [];
+
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      const exists = faqs.some((item) => item.id === data.id);
+      if (!exists) {
+        newFaqs.push({ id: doc.id, ...data });
+      }
+    });
+    setFaqs(newFaqs);
+  };
+
+  useEffect(() => {
+    getFaqs();
+  }, []);
 
   const handleAccordian = (index) => {
     if (showAccordian === index) {
@@ -82,46 +70,54 @@ const FaqPage = () => {
             </Button>
           </div>
           <ul className="flex flex-col">
-            {faqs?.map((faq, idx) => (
-              <li
-                key={faq?.id}
-                className="border-b border-border-1 pb-4 mb-4 last:border-none last:pb-0 last:mb-0"
-                onClick={() => handleAccordian(idx)}
-              >
-                <div className="flex items-center gap-2 mb-2">
-                  <p
+            {faqs.length === 0 ? (
+              <span className="flex justify-center items-center">
+                Loading FAQs...
+              </span>
+            ) : (
+              faqs?.map((faq, idx) => (
+                <li
+                  key={faq?.idx}
+                  className="border-b border-border-1 pb-4 mb-4 last:border-none last:pb-0 last:mb-0"
+                  onClick={() => handleAccordian(idx)}
+                >
+                  <div className="flex items-center gap-2 mb-2">
+                    <p
+                      className={cn(
+                        "font-medium text-base",
+                        showAccordian === faq?.idx
+                          ? "text-primary-orange"
+                          : "text-background-black",
+                      )}
+                    >
+                      {faq?.question}
+                    </p>
+                    <span className="size-4 shrink-0">
+                      <img
+                        src={
+                          showAccordian === faq?.idx
+                            ? "/minus-icon.svg"
+                            : "/plus-icon.svg"
+                        }
+                        alt={
+                          showAccordian === faq?.idx
+                            ? "Minus icon"
+                            : "Plus icon"
+                        }
+                      />
+                    </span>
+                  </div>
+                  <span
                     className={cn(
-                      "font-medium text-base",
-                      showAccordian === faq?.id
-                        ? "text-primary-orange"
-                        : "text-background-black",
+                      "text-sm block overflow-hidden transition-all duration-500 ease-in",
+                      showAccordian === faq?.idx ? "max-h-40" : "max-h-0",
                     )}
                   >
-                    {faq?.question}
-                  </p>
-                  <span className="size-4 shrink-0">
-                    <img
-                      src={
-                        showAccordian === faq?.id
-                          ? "/minus-icon.svg"
-                          : "/plus-icon.svg"
-                      }
-                      alt={
-                        showAccordian === faq?.id ? "Minus icon" : "Plus icon"
-                      }
-                    />
+                    {faq?.answer}
                   </span>
-                </div>
-                <span
-                  className={cn(
-                    "text-sm block overflow-hidden transition-all duration-500 ease-in",
-                    showAccordian === faq?.id ? "max-h-40" : "max-h-0",
-                  )}
-                >
-                  {faq?.answer}
-                </span>
-              </li>
-            ))}
+                </li>
+              ))
+            )}
           </ul>
         </div>
       </div>

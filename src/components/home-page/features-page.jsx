@@ -1,29 +1,30 @@
+import { db } from "@/firebase";
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
+import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 
 const FeaturesPage = () => {
-  const featuresContent = [
-    {
-      id: 1,
-      photo: "/features-card.png",
-      heading: "Dashboard to monitor your business sales from anywhere",
-      content:
-        "Dashboard provides in-depth insight into the performance menu items. You can see popular and unsold menus, helping you to monitor your restaurant business sales.",
-    },
-    {
-      id: 2,
-      photo: "/features-card.png",
-      heading: "Easier and better Desk Management",
-      content:
-        "Desk management becomes smoother with interactive table visualizations. You can manage orders, allocate tables and maximize restaurant capacity.",
-    },
-    {
-      id: 3,
-      photo: "/features-card.png",
-      heading: "More efficient customer recording and monitoring",
-      content:
-        "Monitor order records to tailor orders to customer preferences, such as options to add or remove ingredients for a more personalized experience and better service.",
-    },
-  ];
+  const [featuresContent, setFeaturesContent] = useState([]);
+
+  const getFeaturesContent = async () => {
+    const querySnapshot = await getDocs(
+      query(collection(db, "featuresContent"), orderBy("idx", "asc")),
+    );
+    const newFeaturesContent = [];
+
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      const exists = featuresContent.some((item) => item.id === data.id);
+      if (!exists) {
+        newFeaturesContent.push({ id: doc.id, ...data });
+      }
+    });
+    setFeaturesContent(newFeaturesContent);
+  };
+
+  useEffect(() => {
+    getFeaturesContent();
+  }, []);
 
   return (
     <section className="py-4">
@@ -37,7 +38,7 @@ const FeaturesPage = () => {
             className="bg-background-blue py-10 px-8 rounded-[32px] flex flex-col gap-10"
           >
             <div>
-              <img src={feature?.photo} alt="Features card" />
+              <img src="/features-card.png" alt="Features card" />
             </div>
             <div className="flex flex-col justify-between">
               <div>

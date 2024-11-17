@@ -1,4 +1,18 @@
+import { db } from "@/firebase";
+import {
+  collection,
+  doc,
+  getDocs,
+  orderBy,
+  query,
+  setDoc,
+} from "firebase/firestore";
+import { useState } from "react";
+import { useEffect } from "react";
+
 const TestimonialsPage = () => {
+  const [testimonials, setTestimonials] = useState([]);
+
   const appAdvantages = [
     {
       photo: "/settings-tooth.svg",
@@ -34,32 +48,62 @@ const TestimonialsPage = () => {
     },
   ];
 
-  const testimonials = [
-    {
-      quote: `“We are very impressed with the use of this POS application. Management of orders and payments becomes faster and more accurate so as to increase our operational efficiency.”`,
-      person: "Stevano William",
-      designation: "CEO at Pizza Hut",
-      backgroundColor: "#F1FAEB",
-      fontColor: "#38715B",
-      avatarColor: "#D2E9C2",
-    },
-    {
-      quote: `“The use of this application has given our company efficiency and accuracy in managing orders and payments.”`,
-      person: "Jennifer Lopes",
-      designation: "Bussiness Owner at KFC Indonesia",
-      backgroundColor: "#ECF6FF",
-      fontColor: "#3871A5",
-      avatarColor: "#C5DEF4",
-    },
-    {
-      quote: `“We are pleased with the flexibility of this company's POS application. We can easily adapt our menu, prices and promotions according to market needs.”`,
-      person: "Emanuel Rodrigo",
-      designation: "Product Owner McDonald's",
-      backgroundColor: "#FFF5EE",
-      fontColor: "#DC8558",
-      avatarColor: "#FAD2BE",
-    },
-  ];
+  const getTestimonials = async () => {
+    const querySnapshot = await getDocs(
+      query(collection(db, "testimonials"), orderBy("idx", "asc")),
+    );
+    const newTestimonials = [];
+
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      const exists = testimonials.some((item) => item.id === data.id);
+      if (!exists) {
+        newTestimonials.push({ id: doc.id, ...data });
+      }
+    });
+    setTestimonials(newTestimonials);
+  };
+
+  useEffect(() => {
+    getTestimonials();
+  }, []);
+
+  // const setDocFn = async () => {
+  //   const testimonialsRef = collection(db, "testimonials");
+
+  //   await setDoc(doc(testimonialsRef, "2lPbfN5lHHtl6kuORkaG"), {
+  //     idx: 1,
+  //     quote: `“We are very impressed with the use of this POS application. Management of orders and payments becomes faster and more accurate so as to increase our operational efficiency.”`,
+  //     person: "Stevano William",
+  //     designation: "CEO at Pizza Hut",
+  //     backgroundColor: "#F1FAEB",
+  //     fontColor: "#38715B",
+  //     avatarColor: "#D2E9C2",
+  //   });
+  //   await setDoc(doc(testimonialsRef, "QAxqUzfV9LwejhyzoFkh"), {
+  //     idx: 2,
+  //     quote: `“The use of this application has given our company efficiency and accuracy in managing orders and payments.”`,
+  //     person: "Jennifer Lopes",
+  //     designation: "Bussiness Owner at KFC Indonesia",
+  //     backgroundColor: "#ECF6FF",
+  //     fontColor: "#3871A5",
+  //     avatarColor: "#C5DEF4",
+  //   });
+  //   await setDoc(doc(testimonialsRef, "bCnW9chL3wntmkZL976a"), {
+  //     idx: 3,
+  //     quote: `“We are pleased with the flexibility of this company's POS application. We can easily adapt our menu, prices and promotions according to market needs.”`,
+  //     person: "Emanuel Rodrigo",
+  //     designation: "Product Owner McDonald's",
+  //     backgroundColor: "#FFF5EE",
+  //     fontColor: "#DC8558",
+  //     avatarColor: "#FAD2BE",
+  //   });
+  // };
+
+  // useEffect(() => {
+  //   // setDocFn();
+  // }, []);
+
   return (
     <section className="py-4">
       <div className="flex flex-col gap-10">
@@ -87,7 +131,7 @@ const TestimonialsPage = () => {
         <div className="flex flex-col gap-8">
           {testimonials?.map((testimonial) => (
             <div
-              key={testimonial.person}
+              key={testimonial.id}
               className="flex flex-col gap-6 rounded-[20px] p-8"
               style={{
                 backgroundColor: testimonial?.backgroundColor,
