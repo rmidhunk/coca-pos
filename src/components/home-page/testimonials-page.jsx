@@ -68,42 +68,6 @@ const TestimonialsPage = () => {
     getTestimonials();
   }, []);
 
-  // const setDocFn = async () => {
-  //   const testimonialsRef = collection(db, "testimonials");
-
-  //   await setDoc(doc(testimonialsRef, "2lPbfN5lHHtl6kuORkaG"), {
-  //     idx: 1,
-  //     quote: `“We are very impressed with the use of this POS application. Management of orders and payments becomes faster and more accurate so as to increase our operational efficiency.”`,
-  //     person: "Stevano William",
-  //     designation: "CEO at Pizza Hut",
-  //     backgroundColor: "#F1FAEB",
-  //     fontColor: "#38715B",
-  //     avatarColor: "#D2E9C2",
-  //   });
-  //   await setDoc(doc(testimonialsRef, "QAxqUzfV9LwejhyzoFkh"), {
-  //     idx: 2,
-  //     quote: `“The use of this application has given our company efficiency and accuracy in managing orders and payments.”`,
-  //     person: "Jennifer Lopes",
-  //     designation: "Bussiness Owner at KFC Indonesia",
-  //     backgroundColor: "#ECF6FF",
-  //     fontColor: "#3871A5",
-  //     avatarColor: "#C5DEF4",
-  //   });
-  //   await setDoc(doc(testimonialsRef, "bCnW9chL3wntmkZL976a"), {
-  //     idx: 3,
-  //     quote: `“We are pleased with the flexibility of this company's POS application. We can easily adapt our menu, prices and promotions according to market needs.”`,
-  //     person: "Emanuel Rodrigo",
-  //     designation: "Product Owner McDonald's",
-  //     backgroundColor: "#FFF5EE",
-  //     fontColor: "#DC8558",
-  //     avatarColor: "#FAD2BE",
-  //   });
-  // };
-
-  // useEffect(() => {
-  //   // setDocFn();
-  // }, []);
-
   return (
     <section className="py-4">
       <div className="flex flex-col gap-10">
