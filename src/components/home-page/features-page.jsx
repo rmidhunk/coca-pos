@@ -31,11 +31,11 @@ const FeaturesPage = () => {
       <h4 className="text-3xl font-medium mb-10 sm:text-500-64 xl:max-w-4xl">
         Complementary features for your business needs
       </h4>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 md:gap-16">
         {featuresContent?.map((feature) => (
           <div
             key={feature?.id}
-            className="bg-background-blue py-10 px-8 rounded-[32px] flex flex-col gap-10 lg:flex-row even:flex-row-reverse"
+            className="bg-background-blue py-10 px-8 rounded-[32px] flex flex-col gap-10 lg:flex-row even:flex-row-reverse lg:justify-between"
           >
             <div className="">
               <img src="/features-card.png" alt="Features card" />

@@ -116,7 +116,7 @@ const Header = () => {
   };
 
   return (
-    <div className="flex items-center justify-between py-4">
+    <div className="flex items-center justify-between py-4 xl:max-w-5xl xl:mx-auto">
       <h1 className="shrink-0 cursor-pointer" onClick={() => navigate("/")}>
         <img src="/coca-black-logo.svg" alt="Coca Logo" />
       </h1>

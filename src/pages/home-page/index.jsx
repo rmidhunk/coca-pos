@@ -10,7 +10,7 @@ import TestimonialsPage from "@/components/home-page/testimonials-page";
 
 const index = () => {
   return (
-    <div className="w-11/12 mx-auto">
+    <div className="w-full px-3 container mx-auto sm:px-6">
       <Header />
       <LandingPage />
       <BrandsPage />
