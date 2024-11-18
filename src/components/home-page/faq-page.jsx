@@ -38,12 +38,12 @@ const FaqPage = () => {
   return (
     <section className="py-4 sm:py-10">
       <div className="py-6 px-2 bg-background-blue rounded-[32px] sm:px-14 sm:py-16">
-        <div className="lg:flex lg:items-center">
-          <h4 className="text-3xl font-medium mb-10 sm:text-500-64">
+        <div className="xl:flex xl:items-center xl:justify-between">
+          <h4 className="text-3xl font-medium mb-10 sm:text-500-64 xl:max-w-[600px]">
             Frequently Asked Questions
           </h4>
           <div className="flex justify-center">
-            <div className="inline-flex p-2 bg-white border border-border-1 rounded-full mb-2 md:mb-6 lg:max-h-[70px] lg:pl-5">
+            <div className="inline-flex p-2 bg-white border border-border-1 rounded-full mb-2 md:mb-6 xl:w-80 lg:max-h-[70px] lg:pl-5">
               <input
                 type="text"
                 placeholder="Type your question here"

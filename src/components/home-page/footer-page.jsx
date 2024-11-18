@@ -14,12 +14,12 @@ const FooterPage = () => {
           <h4 className="text-3xl text-white font-medium mb-6 sm:text-500-48 xl:max-w-2xl">
             Don&apos;t Miss This Exclusive Opportunity
           </h4>
-          <div className="flex flex-col gap-4 lg:flex-row">
-            <p className="text-base text-[#C2C2C2] sm:text-400-20">
+          <div className="flex flex-col gap-4 lg:flex-row lg:justify-between lg:gap-20">
+            <p className="text-base text-[#C2C2C2] sm:text-400-20 lg:w-1/2">
               Using our app in business, especially in the restaurant industry,
               has many advantages. Here are some of them:
             </p>
-            <div className="inline-flex p-2 bg-[#232329] border border-border-2 rounded-full mb-2 lg:shrink-0 lg:pl-5">
+            <div className="inline-flex p-2 bg-[#232329] border border-border-2 rounded-full mb-2 lg:shrink-0 lg:pl-5 lg:grow">
               <input
                 type="text"
                 placeholder="Enter your email"

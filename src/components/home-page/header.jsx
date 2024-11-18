@@ -163,7 +163,7 @@ const Header = () => {
           ) : (
             <Button
               variant="outline"
-              className="border-primary-orange text-primary-orange hover:text-primary-orange"
+              className="border-primary-orange text-primary-orange hover:text-primary-orange lg:h-11"
               onClick={() => navigate("/signin")}
             >
               Sign In

@@ -55,6 +55,13 @@ export default {
             fontWeight: "500",
           },
         ],
+        "500-20": [
+          "20px",
+          {
+            lineHeight: "32px",
+            fontWeight: "500",
+          },
+        ],
         "500-24": [
           "24px",
           {
@@ -97,6 +104,20 @@ export default {
             fontWeight: "600",
           },
         ],
+        "600-24": [
+          "24px",
+          {
+            lineHeight: "36px",
+            fontWeight: "600",
+          },
+        ],
+        "600-48": [
+          "48px",
+          {
+            lineHeight: "72px",
+            fontWeight: "600",
+          },
+        ],
       },
       colors: {
         "background-blue": "#F8F9FD",
@@ -106,6 +127,9 @@ export default {
         "grey-2": "#C2C2C2",
         "border-1": "#E4E4E4",
         "border-2": "#35353D",
+        "green-1": "#E0F2D4",
+        "green-2": "#38715B",
+        "green-3": "#F1FAEB",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
