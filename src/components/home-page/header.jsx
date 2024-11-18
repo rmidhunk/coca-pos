@@ -1,7 +1,7 @@
 import { DispatchContext, StateContext } from "@/context";
 import { auth } from "@/firebase";
 import { cn } from "@/lib/utils";
-import { signOut } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { LogOut } from "lucide-react";
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -39,12 +39,20 @@ const Header = () => {
   ];
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged(() => {
-      setIsUserLoading(false);
+    const unSubscribe = onAuthStateChanged(auth, (authUser) => {
+      if (authUser) {
+        dispatch({ type: "UpdateUser", payload: authUser });
+        setIsUserLoading(false);
+      } else {
+        dispatch({ type: "UpdateUser", payload: null });
+        setIsUserLoading(false);
+      }
     });
 
-    return () => unsubscribe();
-  }, []);
+    return () => {
+      unSubscribe();
+    };
+  }, [dispatch]);
 
   const getInitials = (displayName) => {
     if (!displayName) return "";

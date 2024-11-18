@@ -15,7 +15,6 @@ const index = () => {
       <LandingPage />
       <BrandsPage />
       <FeaturesPage />
-      {/* TODO: PricingPage */}
       <PricingPage />
       <TestimonialsPage />
       <FaqPage />
