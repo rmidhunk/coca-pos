@@ -38,7 +38,7 @@ const FaqPage = () => {
   return (
     <section className="py-4 sm:py-10">
       <div className="py-6 px-2 bg-background-blue rounded-[32px] sm:px-14 sm:py-16">
-        <div>
+        <div className="lg:flex">
           <h4 className="text-3xl font-medium mb-10 sm:text-500-64">
             Frequently Asked Questions
           </h4>
@@ -49,7 +49,7 @@ const FaqPage = () => {
                 placeholder="Type your question here"
                 className="w-full text-sm p-1 outline-none bg-transparent"
               />
-              <Button>Search</Button>
+              <Button className="lg:h-14">Search</Button>
             </div>
           </div>
         </div>

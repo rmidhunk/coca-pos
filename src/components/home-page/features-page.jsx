@@ -35,12 +35,12 @@ const FeaturesPage = () => {
         {featuresContent?.map((feature) => (
           <div
             key={feature?.id}
-            className="bg-background-blue py-10 px-8 rounded-[32px] flex flex-col gap-10"
+            className="bg-background-blue py-10 px-8 rounded-[32px] flex flex-col gap-10 lg:flex-row even:flex-row-reverse"
           >
-            <div>
+            <div className="">
               <img src="/features-card.png" alt="Features card" />
             </div>
-            <div className="flex flex-col justify-between">
+            <div className="flex flex-col justify-between lg:w-[586px]">
               <div>
                 <h5 className="font-medium text-xl mb-3 sm:text-500-32">
                   {feature?.heading}
@@ -49,7 +49,7 @@ const FeaturesPage = () => {
                   {feature?.content}
                 </p>
               </div>
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-4 sm:flex-row">
                 <Button className="sm:text-600-16">Launch Demo</Button>
                 <Button variant="outline" className="text-600-16">
                   More Info
