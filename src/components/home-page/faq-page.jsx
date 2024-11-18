@@ -38,12 +38,12 @@ const FaqPage = () => {
   return (
     <section className="py-4 sm:py-10">
       <div className="py-6 px-2 bg-background-blue rounded-[32px] sm:px-14 sm:py-16">
-        <div className="lg:flex">
+        <div className="lg:flex lg:items-center">
           <h4 className="text-3xl font-medium mb-10 sm:text-500-64">
             Frequently Asked Questions
           </h4>
           <div className="flex justify-center">
-            <div className="inline-flex p-2 bg-white border border-border-1 rounded-full mb-2 md:mb-6">
+            <div className="inline-flex p-2 bg-white border border-border-1 rounded-full mb-2 md:mb-6 lg:max-h-[70px] lg:pl-5">
               <input
                 type="text"
                 placeholder="Type your question here"
@@ -53,22 +53,31 @@ const FaqPage = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-4 md:gap-8">
+        <div className="flex flex-col gap-4 md:gap-8 xl:flex-row">
           <div className="flex justify-center">
-            <div className="inline-block bg-background-blue rounded-full p-1">
+            <div className="inline-block bg-background-blue rounded-full p-1 xl:text-center">
               <Button
                 variant="outline"
-                className="border-primary-orange text-primary-orange hover:text-primary-orange"
+                className="border-primary-orange text-primary-orange hover:text-primary-orange xl:px-14 xl:py-2.5"
               >
                 General
               </Button>
-              <Button variant="ghost" className="text-grey-1">
+              <Button
+                variant="ghost"
+                className="text-grey-1 xl:px-14 xl:py-2.5"
+              >
                 Transactions
               </Button>
-              <Button variant="ghost" className="text-grey-1">
+              <Button
+                variant="ghost"
+                className="text-grey-1 xl:px-14 xl:py-2.5"
+              >
                 Payment
               </Button>
-              <Button variant="ghost" className="text-grey-1">
+              <Button
+                variant="ghost"
+                className="text-grey-1 xl:px-14 xl:py-2.5"
+              >
                 Others
               </Button>
             </div>

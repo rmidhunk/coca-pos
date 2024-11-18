@@ -11,7 +11,7 @@ const FooterPage = () => {
     <section className="pb-4 sm:pb-8">
       <div className="bg-[#1B1B1E] p-4 rounded-b-[32px] sm:px-14 sm:py-10">
         <div className="border-b border-[#2D2D30] pb-4">
-          <h4 className="text-3xl text-white font-medium mb-6 sm:text-500-48">
+          <h4 className="text-3xl text-white font-medium mb-6 sm:text-500-48 xl:max-w-2xl">
             Don&apos;t Miss This Exclusive Opportunity
           </h4>
           <div className="flex flex-col gap-4 lg:flex-row">
@@ -19,7 +19,7 @@ const FooterPage = () => {
               Using our app in business, especially in the restaurant industry,
               has many advantages. Here are some of them:
             </p>
-            <div className="inline-flex p-2 bg-[#232329] border border-border-2 rounded-full mb-2 lg:shrink-0">
+            <div className="inline-flex p-2 bg-[#232329] border border-border-2 rounded-full mb-2 lg:shrink-0 lg:pl-5">
               <input
                 type="text"
                 placeholder="Enter your email"
@@ -29,7 +29,7 @@ const FooterPage = () => {
             </div>
           </div>
         </div>
-        <div className="pt-4 flex flex-col gap-6 lg:flex-row lg:pt-16">
+        <div className="pt-4 flex flex-col gap-6 lg:flex-row lg:justify-between lg:pt-16">
           <div>
             <div className="w-20 mb-2">
               <img src="/coca-white-logo.svg" alt="Coca logo" />

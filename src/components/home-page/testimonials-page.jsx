@@ -62,7 +62,7 @@ const TestimonialsPage = () => {
 
   return (
     <section className="py-4 sm:py-20">
-      <div className="flex flex-col gap-10">
+      <div className="flex flex-col gap-10 xl:flex-row xl:items-end">
         <div>
           <h4 className="text-3xl font-medium mb-10 sm:text-500-64">
             Ease in the Hand
@@ -72,14 +72,14 @@ const TestimonialsPage = () => {
             has many advantages. Here are some of them:
           </p>
 
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-4 xl:justify-start xl:gap-8">
             {appAdvantages?.map((advantage) => (
-              <div key={advantage?.title}>
+              <div key={advantage?.title} className="xl:w-48">
                 <span className="inline-block w-16 mb-3">
                   <img src={advantage?.photo} alt={advantage?.title} />
                 </span>
                 <p className="font-medium text-lg mb-2">{advantage?.title}</p>
-                <span className="inline-block text-sm text-grey-1 w-60 sm:text-400-16">
+                <span className="inline-block text-sm text-grey-1 w-60 sm:text-400-16 xl:w-44">
                   {advantage?.description}
                 </span>
               </div>

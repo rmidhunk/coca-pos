@@ -28,7 +28,7 @@ const FeaturesPage = () => {
 
   return (
     <section className="py-4 sm:py-16">
-      <h4 className="text-3xl font-medium mb-10 sm:text-500-64">
+      <h4 className="text-3xl font-medium mb-10 sm:text-500-64 xl:max-w-4xl">
         Complementary features for your business needs
       </h4>
       <div className="flex flex-col gap-4">
@@ -41,7 +41,7 @@ const FeaturesPage = () => {
               <img src="/features-card.png" alt="Features card" />
             </div>
             <div className="flex flex-col justify-between lg:w-[586px]">
-              <div>
+              <div className="xl:max-w-xl">
                 <h5 className="font-medium text-xl mb-3 sm:text-500-32">
                   {feature?.heading}
                 </h5>
