@@ -70,7 +70,7 @@ export function BarChartComponent() {
             <Bar
               dataKey="salesStatistics"
               fill="#8FBFFF"
-              barSize={8}
+              barSize={16}
               radius={8}
               activeBar={{
                 fill: "#4E9AFF",

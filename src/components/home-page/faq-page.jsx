@@ -39,7 +39,7 @@ const FaqPage = () => {
     <section className="py-4 sm:py-10">
       <div className="py-6 px-2 bg-background-blue rounded-[32px] sm:px-14 sm:py-16">
         <div>
-          <h4 className="text-3xl font-medium mb-10">
+          <h4 className="text-3xl font-medium mb-10 sm:text-500-64">
             Frequently Asked Questions
           </h4>
           <div className="flex justify-center">
@@ -62,13 +62,13 @@ const FaqPage = () => {
               >
                 General
               </Button>
-              <Button variant="ghost" className="text-grey-text">
+              <Button variant="ghost" className="text-grey-1">
                 Transactions
               </Button>
-              <Button variant="ghost" className="text-grey-text">
+              <Button variant="ghost" className="text-grey-1">
                 Payment
               </Button>
-              <Button variant="ghost" className="text-grey-text">
+              <Button variant="ghost" className="text-grey-1">
                 Others
               </Button>
             </div>
@@ -88,7 +88,7 @@ const FaqPage = () => {
                   <div className="flex items-center justify-between gap-2 mb-2">
                     <p
                       className={cn(
-                        "font-medium text-base",
+                        "font-medium text-base sm:text-500-24",
                         showAccordian === faq?.idx
                           ? "text-primary-orange"
                           : "text-background-black",
@@ -96,7 +96,7 @@ const FaqPage = () => {
                     >
                       {faq?.question}
                     </p>
-                    <span className="size-4 shrink-0">
+                    <span className="size-4 shrink-0 cursor-pointer">
                       <img
                         src={
                           showAccordian === faq?.idx
@@ -113,8 +113,8 @@ const FaqPage = () => {
                   </div>
                   <span
                     className={cn(
-                      "text-sm block overflow-hidden transition-all duration-500 ease-in",
-                      showAccordian === faq?.idx ? "max-h-40" : "max-h-0",
+                      "text-sm block overflow-hidden transition-all duration-200 ease-in sm:text-400-20",
+                      showAccordian === faq?.idx ? "max-h-48" : "max-h-0",
                     )}
                   >
                     {faq?.answer}

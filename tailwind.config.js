@@ -11,11 +11,99 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      fontSize: {
+        heading: [
+          "64px",
+          {
+            lineHeight: "76.8px",
+            letterSpacing: "-3%",
+            fontWeight: "500",
+          },
+        ],
+        "400-14": [
+          "14px",
+          {
+            lineHeight: "19.6px",
+            fontWeight: "400",
+          },
+        ],
+        "400-16": [
+          "16px",
+          {
+            lineHeight: "24px",
+            fontWeight: "400",
+          },
+        ],
+        "400-18": [
+          "18px",
+          {
+            lineHeight: "28px",
+            fontWeight: "400",
+          },
+        ],
+        "400-20": [
+          "20px",
+          {
+            lineHeight: "28px",
+            fontWeight: "400",
+          },
+        ],
+        "500-14": [
+          "14px",
+          {
+            lineHeight: "20px",
+            fontWeight: "500",
+          },
+        ],
+        "500-24": [
+          "24px",
+          {
+            lineHeight: "36px",
+            fontWeight: "500",
+          },
+        ],
+        "500-32": [
+          "32px",
+          {
+            lineHeight: "40px",
+            fontWeight: "500",
+          },
+        ],
+        "500-48": [
+          "48px",
+          {
+            lineHeight: "64px",
+            fontWeight: "500",
+          },
+        ],
+        "500-64": [
+          "64px",
+          {
+            lineHeight: "76.8px",
+            fontWeight: "500",
+          },
+        ],
+        "600-16": [
+          "16px",
+          {
+            lineHeight: "20px",
+            fontWeight: "600",
+          },
+        ],
+        "600-18": [
+          "18px",
+          {
+            lineHeight: "27px",
+            fontWeight: "600",
+          },
+        ],
+      },
       colors: {
         "background-blue": "#F8F9FD",
         "background-black": "#19191C",
         "primary-orange": "#FF5C00",
-        "grey-text": "#4D4E57",
+        "grey-1": "#4D4E57",
+        "grey-2": "#C2C2C2",
         "border-1": "#E4E4E4",
         "border-2": "#35353D",
         background: "hsl(var(--background))",

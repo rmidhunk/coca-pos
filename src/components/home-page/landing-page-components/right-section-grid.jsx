@@ -6,8 +6,8 @@ const RightSectionGrid = () => {
       <div>
         <BarChartComponent />
       </div>
-      <div className="flex flex-col gap-4">
-        <div className="bg-[#F2ECFF] rounded-[32px] p-4 flex flex-col justify-between h-64 sm:p-5">
+      <div className="flex flex-col gap-4 sm:flex-row">
+        <div className="bg-[#F2ECFF] rounded-[32px] p-4 flex flex-col justify-between h-64 sm:p-5 sm:flex-grow">
           <div>
             <div className="flex items-center gap-2 py-2 px-3 w-max bg-white rounded-full mb-2">
               <div className="size-6">
@@ -17,7 +17,7 @@ const RightSectionGrid = () => {
                 Rating Review
               </span>
             </div>
-            <p className="text-grey-text text-sm">
+            <p className="text-grey-1 text-sm sm:text-400-14 sm:w-44">
               Reviews of some of our app restaurant industry companies.
             </p>
           </div>
@@ -28,7 +28,7 @@ const RightSectionGrid = () => {
             <span className="font-semibold text-4xl">4.9</span>
           </div>
         </div>
-        <div className="bg-[#6D6D6F] rounded-[32px] p-4 flex flex-col justify-between h-64 sm:p-5">
+        <div className="bg-[#6D6D6F] rounded-[32px] p-4 flex flex-col justify-between h-64 sm:p-5 sm:flex-grow">
           <div>
             <div className="flex items-center gap-2 py-2 px-3 w-max bg-[#222222] rounded-full">
               <div className="size-6">
@@ -58,9 +58,7 @@ const RightSectionGrid = () => {
                 <p className="font-semibold text-sm text-background-black">
                   Patrick Fernandes
                 </p>
-                <span className="text-sm text-grey-text">
-                  CEO at Burger King
-                </span>
+                <span className="text-sm text-grey-1">CEO at Burger King</span>
               </div>
             </div>
           </div>

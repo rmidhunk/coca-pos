@@ -11,11 +11,11 @@ const FooterPage = () => {
     <section className="pb-4">
       <div className="bg-[#1B1B1E] p-4 rounded-b-[32px] sm:px-14 sm:py-10">
         <div className="border-b border-[#2D2D30] pb-4">
-          <h4 className="text-3xl text-white font-medium mb-6">
-            Gain Excellence with the Best POS Solutions
+          <h4 className="text-3xl text-white font-medium mb-6 sm:text-500-48">
+            Don&apos;t Miss This Exclusive Opportunity
           </h4>
           <div className="flex flex-col gap-4">
-            <p className="text-base text-[#C2C2C2]">
+            <p className="text-base text-[#C2C2C2] sm:text-400-20">
               Using our app in business, especially in the restaurant industry,
               has many advantages. Here are some of them:
             </p>

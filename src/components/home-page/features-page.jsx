@@ -28,7 +28,7 @@ const FeaturesPage = () => {
 
   return (
     <section className="py-4 sm:py-16">
-      <h4 className="text-3xl font-medium mb-10">
+      <h4 className="text-3xl font-medium mb-10 sm:text-500-64">
         Complementary features for your business needs
       </h4>
       <div className="flex flex-col gap-4">
@@ -42,14 +42,18 @@ const FeaturesPage = () => {
             </div>
             <div className="flex flex-col justify-between">
               <div>
-                <h5 className="font-medium text-xl mb-3">{feature?.heading}</h5>
-                <p className="text-base text-grey-text mb-8">
+                <h5 className="font-medium text-xl mb-3 sm:text-500-32">
+                  {feature?.heading}
+                </h5>
+                <p className="text-base text-grey-1 mb-8 sm:text-400-18">
                   {feature?.content}
                 </p>
               </div>
               <div className="flex flex-col gap-4">
-                <Button>Launch Demo</Button>
-                <Button variant="outline">More Info</Button>
+                <Button className="sm:text-600-16">Launch Demo</Button>
+                <Button variant="outline" className="text-600-16">
+                  More Info
+                </Button>
               </div>
             </div>
           </div>

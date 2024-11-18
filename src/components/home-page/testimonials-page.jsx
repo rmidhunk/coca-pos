@@ -64,8 +64,10 @@ const TestimonialsPage = () => {
     <section className="py-4 sm:py-20">
       <div className="flex flex-col gap-10">
         <div>
-          <h4 className="text-3xl font-medium mb-10">Ease in the Hand</h4>
-          <p className="text-base text-grey-text mb-8">
+          <h4 className="text-3xl font-medium mb-10 sm:text-500-64">
+            Ease in the Hand
+          </h4>
+          <p className="text-base text-grey-1 mb-8 sm:text-400-18">
             Using our app in business, especially in the restaurant industry,
             has many advantages. Here are some of them:
           </p>
@@ -77,7 +79,7 @@ const TestimonialsPage = () => {
                   <img src={advantage?.photo} alt={advantage?.title} />
                 </span>
                 <p className="font-medium text-lg mb-2">{advantage?.title}</p>
-                <span className="inline-block text-sm text-grey-text w-60">
+                <span className="inline-block text-sm text-grey-1 w-60 sm:text-400-16">
                   {advantage?.description}
                 </span>
               </div>
@@ -99,7 +101,9 @@ const TestimonialsPage = () => {
                   color: testimonial?.fontColor,
                 }}
               >
-                <p className="font-medium">{testimonial?.quote}</p>
+                <p className="font-medium sm:text-500-24">
+                  {testimonial?.quote}
+                </p>
                 <div className="flex items-center gap-3">
                   <span
                     className="inline-block size-14 rounded-full shrink-0"
@@ -108,10 +112,10 @@ const TestimonialsPage = () => {
                     }}
                   />
                   <div>
-                    <p className="font-semibold text-base">
+                    <p className="font-semibold text-base sm:text-600-18">
                       {testimonial?.person}
                     </p>
-                    <span className="font-semibold text-sm">
+                    <span className="font-semibold text-sm sm:text-600-16">
                       {testimonial?.designation}
                     </span>
                   </div>

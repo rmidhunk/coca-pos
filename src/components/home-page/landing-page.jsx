@@ -6,14 +6,14 @@ const LandingPage = () => {
     <section className="flex flex-col gap-5 py-4 sm:py-7">
       <div className="bg-[#131315] rounded-[32px]">
         <div className="bg-[url('/landing-bg.svg')] bg-cover bg-no-repeat px-4 pt-4 pb-40 rounded-[32px] text-white sm:px-12 sm:pt-14">
-          <span className="inline-block text-sm mb-8">
+          <span className="inline-block text-sm mb-8 text-grey-2 sm:font-normal">
             All the features you need in one App for any kind of your business
             🚀
           </span>
-          <h2 className="text-4xl mb-8">
+          <h2 className="text-4xl mb-8 sm:text-heading">
             Manage your restaurant business so advanced
           </h2>
-          <Button className="h-14 pl-6 pr-2">
+          <Button className="h-14 pl-6 pr-2 sm:text-600-16">
             Get Started for Free{" "}
             <span>
               <img src="/circle-right-arrow.svg" alt="Right Arrow" />

@@ -7,11 +7,14 @@ const DispatchContext = createContext();
 function ContextProvider({ children }) {
   const initialValues = {
     user: null,
+    isAuthLoading: true,
   };
   const reducer = (state, action) => {
     switch (action.type) {
       case "UpdateUser":
-        return { user: action.payload };
+        return { user: action.payload, isAuthLoading: false };
+      case "UpdateAuthLoading":
+        return { isAuthLoading: action.payload };
 
       default:
         return state;
