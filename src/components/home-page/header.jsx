@@ -154,7 +154,7 @@ const Header = () => {
           ))}
         </ul>
       </nav>
-      <div className="flex items-center">
+      <div className="flex items-center sm:gap-2">
         <div className="justify-end">
           {isUserLoading ? (
             <div className="h-8 w-8 rounded-full bg-gray-200 animate-pulse" />

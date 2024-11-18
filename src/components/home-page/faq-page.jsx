@@ -43,7 +43,7 @@ const FaqPage = () => {
             Frequently Asked Questions
           </h4>
           <div className="flex justify-center">
-            <div className="inline-flex p-2 bg-white border border-border-1 rounded-full mb-2">
+            <div className="inline-flex p-2 bg-white border border-border-1 rounded-full mb-2 md:mb-6">
               <input
                 type="text"
                 placeholder="Type your question here"
@@ -53,7 +53,7 @@ const FaqPage = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 md:gap-8">
           <div className="flex justify-center">
             <div className="inline-block bg-background-blue rounded-full p-1">
               <Button
